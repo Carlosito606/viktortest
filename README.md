@@ -12,13 +12,15 @@ report of what the agents could and couldn't do, with fixes, in a web dashboard.
 
 - Python 3.12, [uv](https://docs.astral.sh/uv/)
 - Dashboard: FastAPI + Jinja2 + HTMX
-- Agents: [browser-use](https://github.com/browser-use/browser-use) `==1.0.6` on local Chromium
+- Agents: Claude Code sessions via [claude-agent-sdk](https://pypi.org/project/claude-agent-sdk/) on a personal Claude subscription (no API key), driving a local Chromium through the [browser-use](https://github.com/browser-use/browser-use) `==1.0.6` MCP server (Playwright MCP as fallback)
 - Static scanner: httpx + Playwright
 - Storage: SQLite (later Postgres), local artifact store for screenshots
 
 ## Configuration
 
 Copy `.env.example` to `.env` and fill it in. Never commit `.env` — this repository is public.
+The subscription mode is for personal use on your own machine only (Anthropic's terms); an optional `api` backend
+with an API key exists for anything else.
 
 ## Responsible use
 
